@@ -15,4 +15,9 @@ def dictionary
 	}
 end
 
-def word_substituter()
+def word_substituter(tweet)
+  arr = tweet.to_a 
+  count = 0 
+  while count < arr.size 
+    if(arr[count] == dictionary.contains)
+      arr[count] = dictionary.index
