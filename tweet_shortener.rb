@@ -16,8 +16,12 @@ def dictionary
 end
 
 def word_substituter(tweet)
-  arr = tweet.to_a 
-  count = 0 
-  while count < arr.size 
-    if(arr[count] == dictionary.contains)
-      arr[count] = dictionary.index
+ substitutes = dictionary
+	words = tweet.split(" ")
+	words.map do |word|
+		if substitutes[word.downcase]
+			substitutes[word.downcase]
+		else
+			word
+		end
+	end.join(" ")
